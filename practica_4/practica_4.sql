@@ -1,0 +1,16 @@
+CREATE TABLE `Practica 4`.`Autor` 
+	( `rut` INT(8) UNSIGNED ZEROFILL NOT NULL PRIMARY KEY , 
+  `nombre` CHAR(50) NOT NULL , 
+  `fono` INT(9) UNSIGNED NOT NULL) ;
+  
+CREATE TABLE `Libro` ( 
+    `codigo` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    `titulo` VARCHAR(50) NOT NULL , 
+    `ISBN` INT(12) NOT NULL , 
+    `editorial` CHAR(30) NOT NULL);
+
+
+CREATE TABLE "escribe" (
+    "rut" INT(8) UNSIGNED ZEROFILL NOT NULL PRIMARY,
+    
+)

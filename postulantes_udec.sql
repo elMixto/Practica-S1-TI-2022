@@ -1,0 +1,491 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generaci�n: 30-05-2022 a las 06:22:55
+-- Versi�n del servidor: 10.1.34-MariaDB
+-- Versi�n de PHP: 7.2.7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES latin1 */;
+
+--
+-- Base de datos: `postulantes_udec`
+--
+CREATE DATABASE IF NOT EXISTS `postulantes_udec` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `postulantes_udec`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asignaturas`
+--
+
+CREATE TABLE `asignaturas` (
+  `codAsignatura` char(5) NOT NULL,
+  `nombreAsignatura` varchar(50) NOT NULL,
+  `creditos` tinyint(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `asignaturas`
+--
+
+INSERT INTO `asignaturas` (`codAsignatura`, `nombreAsignatura`, `creditos`) VALUES
+('22101', 'CCC ZZZZ', 4),
+('22102', 'PPPPPPPP PPPP', 3),
+('22103', 'MMMMM ZZZ', 2),
+('22104', 'MMMMMMMMMM HHHHH', 2),
+('22105', 'BBBBBBB GGGGGG', 3),
+('22108', 'AAAAAAAA VVVVVV', 4),
+('22109', 'OOOOOOOOOO BBBB', 2),
+('22110', 'PPPPPPP GGGGGGGG', 3),
+('22111', 'UUUUUUU QQQQQQQQQQ', 5),
+('22113', 'OOOOO IIIIIIII', 3),
+('22115', 'BBBBBBBBBB FFFFFF', 2),
+('22117', 'KKKKKKKK GGGGGGGGGG', 4),
+('22119', 'GGGGGGG OOOOOOOOO', 4),
+('22121', 'XXXX OOOOOOOO', 2),
+('22122', 'BBBB HHHH', 5),
+('22123', 'LLLLLLLL MMMMM', 2),
+('22124', 'AAAA NNNNNNNNNN', 7),
+('22126', 'KKKKKKKKK IIIIIII', 5),
+('22127', 'EEEEE MMMMMMM', 3),
+('22128', 'YYYYYY MMM', 6),
+('22129', 'PPPPPPPPPP PPPPPPPPPP', 3),
+('22130', 'HHHHHHHHH LLLLLLLLL', 3),
+('22131', 'CCC UUU', 2),
+('22132', 'XXXXXX JJJJJJ', 5),
+('22133', 'LLLLLLL BBBBBB', 5),
+('22135', 'FFFFFF MMMMMMMMMM', 4),
+('22138', 'ZZZZ VVVVV', 4),
+('22139', 'LLLLL AAAAA', 5),
+('22140', 'MMMMM PPPPPPPPP', 3),
+('22142', 'FFFF EEEEEEEEE', 4),
+('22143', 'YYYYYYYYYY QQQQQ', 5),
+('22144', 'VVVV VVVVVVVV', 2),
+('22145', 'ZZZZZZZ EEEEEEE', 2),
+('22146', 'UUUUUU GGGGG', 2),
+('22147', 'JJJJJJJJJJ OOOOOOO', 2),
+('22148', 'FFF OOOOO', 5),
+('22149', 'CCCCCC WWWWWWWWWW', 5),
+('22150', 'UUU BBBB', 2),
+('22152', 'ZZZZZZZ PPPPPPPPP', 2),
+('22153', 'TTTTTT MMMMMMM', 5),
+('22154', 'EEEEEEEEE QQQQQ', 3),
+('22156', 'NNNNNNN WWWWW', 4),
+('22157', 'IIIIII JJJJJJ', 3),
+('22159', 'UUUUUUUUUU HHHH', 2),
+('22161', 'QQQQQQQQQQ TTTTTTTTTT', 5),
+('22162', 'FFF EEEE', 3),
+('22165', 'NNN BBB', 3),
+('22166', 'CCC GGGG', 5),
+('22167', 'FFFFFFFFFF GGG', 3),
+('22168', 'PPPPPPPPPP IIII', 4),
+('22169', 'CCC QQQQQQQQQ', 5),
+('22170', 'ZZZZZ UUUU', 5),
+('22171', 'BBBBBBBB WWWWW', 3),
+('22172', 'EEEEEEEE OOOOOO', 4),
+('22173', 'NNNN HHH', 2),
+('22174', 'KKKKKKK LLLLLL', 4),
+('22175', 'RRRRRRRRRR PPP', 5),
+('22177', 'MMMMMMM CCCCCCCCCC', 3),
+('22179', 'FFFF GGGG', 5),
+('22180', 'JJJJJJ HHH', 5),
+('22181', 'LLL YYYYYYY', 5),
+('22184', 'CCCCCCCCCC LLLLLLLLLL', 5),
+('22185', 'RRRR DDDDDDDDD', 3),
+('22186', 'BBBBBBBB MMM', 2),
+('22187', 'PPPPPPPPPP TTT', 2),
+('22188', 'PPPPPPPP YYYYYY', 2),
+('22189', 'XXXX UUUUUUU', 4),
+('22190', 'YYYYYYY GGGGGG', 3),
+('22191', 'OOOOOOOOO CCC', 4),
+('22192', 'WWWWWWW NNNNNNNN', 3),
+('22193', 'QQQQQ GGGGGGGG', 5),
+('22194', 'LLLLLLLL GGGGGGGGG', 4),
+('22195', 'IIII YYYY', 5),
+('22199', 'UUU DDDDDDDD', 5),
+('codAs', 'nombreAsignatura', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carreras`
+--
+
+CREATE TABLE `carreras` (
+  `codCarrera` char(4) NOT NULL,
+  `nombreCarrera` varchar(30) NOT NULL,
+  `canSemestres` tinyint(2) NOT NULL,
+  `ptjePTU` smallint(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `carreras`
+--
+
+INSERT INTO `carreras` (`codCarrera`, `nombreCarrera`, `canSemestres`, `ptjePTU`) VALUES
+('1101', 'Periodismo', 10, 765),
+('1102', 'Bot�nica', 12, 796),
+('1103', 'enfermeria', 11, 737),
+('1104', 'Industrial', 14, 816),
+('1105', 'Informatica', 12, 741),
+('1106', 'Derecho', 10, 796),
+('1107', 'Matem�ticas', 11, 815),
+('1108', 'Bioquimica', 12, 754),
+('1109', 'Medicina', 13, 744),
+('1110', 'Econom�a', 15, 754);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `malla`
+--
+
+CREATE TABLE `malla` (
+  `codCarrera` char(4) NOT NULL,
+  `codAsignatura` char(5) NOT NULL,
+  `semestre` char(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `malla`
+--
+
+INSERT INTO `malla` (`codCarrera`, `codAsignatura`, `semestre`) VALUES
+('1101', '22102', '2'),
+('1101', '22103', '11'),
+('1101', '22108', '8'),
+('1101', '22117', '7'),
+('1101', '22129', '12'),
+('1101', '22148', '5'),
+('1101', '22159', '4'),
+('1101', '22177', '10'),
+('1101', '22185', '3'),
+('1101', '22186', '9'),
+('1101', '22191', '1'),
+('1101', '22194', '6'),
+('1102', '22109', '11'),
+('1102', '22123', '4'),
+('1102', '22128', '9'),
+('1102', '22149', '2'),
+('1102', '22150', '7'),
+('1102', '22166', '12'),
+('1102', '22167', '8'),
+('1102', '22170', '1'),
+('1102', '22180', '5'),
+('1102', '22189', '3'),
+('1102', '22191', '6'),
+('1103', '22105', '7'),
+('1103', '22126', '3'),
+('1103', '22128', '1'),
+('1103', '22149', '9'),
+('1103', '22162', '10'),
+('1103', '22166', '2'),
+('1103', '22171', '11'),
+('1103', '22172', '12'),
+('1103', '22185', '8'),
+('1103', '22187', '4'),
+('1103', '22190', '6'),
+('1103', '22199', '5'),
+('1104', '22122', '8'),
+('1104', '22124', '3'),
+('1104', '22127', '7'),
+('1104', '22131', '1'),
+('1104', '22133', '2'),
+('1104', '22139', '10'),
+('1104', '22145', '9'),
+('1104', '22159', '11'),
+('1104', '22165', '6'),
+('1104', '22180', '12'),
+('1104', '22184', '4'),
+('1105', '22102', '8'),
+('1105', '22104', '9'),
+('1105', '22110', '3'),
+('1105', '22117', '5'),
+('1105', '22138', '1'),
+('1105', '22149', '4'),
+('1105', '22154', '10'),
+('1105', '22159', '7'),
+('1105', '22170', '2'),
+('1105', '22171', '6'),
+('1105', '22187', '11'),
+('1105', '22192', '12'),
+('1106', '22101', '4'),
+('1106', '22111', '10'),
+('1106', '22122', '1'),
+('1106', '22135', '8'),
+('1106', '22142', '7'),
+('1106', '22147', '6'),
+('1106', '22150', '3'),
+('1106', '22153', '2'),
+('1106', '22162', '12'),
+('1106', '22173', '9'),
+('1106', '22174', '5'),
+('1106', '22195', '11'),
+('1107', '22110', '11'),
+('1107', '22123', '9'),
+('1107', '22124', '1'),
+('1107', '22126', '12'),
+('1107', '22133', '2'),
+('1107', '22140', '8'),
+('1107', '22149', '5'),
+('1107', '22150', '7'),
+('1107', '22156', '3'),
+('1107', '22157', '10'),
+('1107', '22161', '6'),
+('1107', '22170', '4'),
+('1108', '22105', '4'),
+('1108', '22110', '9'),
+('1108', '22113', '6'),
+('1108', '22129', '12'),
+('1108', '22130', '2'),
+('1108', '22145', '8'),
+('1108', '22146', '7'),
+('1108', '22153', '3'),
+('1108', '22168', '10'),
+('1108', '22179', '5'),
+('1108', '22181', '1'),
+('1109', '22101', '3'),
+('1109', '22119', '10'),
+('1109', '22121', '12'),
+('1109', '22124', '1'),
+('1109', '22132', '11'),
+('1109', '22169', '5'),
+('1109', '22186', '9'),
+('1109', '22188', '8'),
+('1109', '22190', '2'),
+('1109', '22193', '4'),
+('1109', '22195', '6'),
+('1110', '22109', '6'),
+('1110', '22115', '11'),
+('1110', '22143', '12'),
+('1110', '22144', '1'),
+('1110', '22145', '8'),
+('1110', '22148', '5'),
+('1110', '22152', '2'),
+('1110', '22175', '9'),
+('1110', '22185', '4'),
+('1110', '22193', '12'),
+('1110', '22195', '7'),
+('1110', '22199', '3'),
+('codC', 'codAs', 'se');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `postulantes`
+--
+
+CREATE TABLE `postulantes` (
+  `numMat` char(13) NOT NULL,
+  `seccion` char(1) NOT NULL,
+  `pref1` char(4) NOT NULL,
+  `pref2` char(4) NOT NULL,
+  `pref3` char(4) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `ptu` smallint(6) NOT NULL,
+  `codCarrera` char(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `postulantes`
+--
+
+INSERT INTO `postulantes` (`numMat`, `seccion`, `pref1`, `pref2`, `pref3`, `nombre`, `ptu`, `codCarrera`) VALUES
+('2016419471-1', '1', '1104', '1103', '1101', 'BARROS BASTIDAS PABLO ANDR�S', 715, NULL),
+('2016430199-1', 'M', '1102', '1108', '1105', ' VALENZUELA CARRASCO CAROLINA ELIZABETH', 480, NULL),
+('2016436677-5', 'M', '1102', '1105', '1104', ' ARANCIBIA BELTRAN TOMAS IGNACIO', 547, NULL),
+('2016442464-3', 'M', '1110', '1102', '1108', ' MANSILLA BRITO CLAUDIO JAVIER', 524, NULL),
+('2016449922-8', 'M', '1107', '1101', '1104', ' GAMONAL LARA JAVIER IGNACIO', 838, '1107'),
+('2016455639-6', '1', '1109', '1109', '1108', 'L�PEZ V�SQUEZ DIEGO PAOLO FRANCO', 623, NULL),
+('2017070005-9', '1', '1109', '1104', '1108', 'S�NCHEZ MU�OZ ROMINA ANDREA', 559, NULL),
+('2017401524-5', 'M', '1104', '1104', '1105', ' MONCADA GONZALEZ BRYAN EDUARDO', 494, NULL),
+('2017413174-1', '1', '1106', '1101', '1105', 'ORTIZ RAMOS NICOL�S FRANCISCO', 710, NULL),
+('2017417234-1', '1', '1105', '1102', '1102', 'CARRASCO SELAIVE BENJAMIN JOSE', 583, NULL),
+('2017442239-8', '1', '1106', '1110', '1103', 'LEIVA COFR� BEL�N DE LAS NIEVES', 740, '1103'),
+('2017445181-9', '2', '1104', '1109', '1105', 'LARENAS CORT�S RODRIGO FERNANDO', 746, '1109'),
+('2017455047-7', '1', '1108', '1105', '1105', 'AMPUERO GEIWITZ DIEGO ANDR�S', 467, NULL),
+('2017456426-5', '1', '1103', '1103', '1101', 'NICACIONES PINTO M�NDEZ MAT�AS ALEXIS', 735, NULL),
+('2017457741-3', '1', '1101', '1107', '1105', 'Y��EZ SEP�LVEDA IGNACIO ESTEBAN', 662, NULL),
+('2018410667-2', '1', '1106', '1105', '1105', 'VIELMA MART�NEZ SOF�A CONSTANZA', 529, NULL),
+('2018426652-1', '1', '1105', '1102', '1101', 'QUINTANA ORTIZ VALENTINA IGNACIA', 578, NULL),
+('2018432814-4', '1', '1105', '1103', '1103', 'CASTILLO GALLEGOS RODRIGO ALEJANDRO', 740, '1103'),
+('2018432903-5', '1', '1101', '1107', '1107', 'FIGUEROA P�REZ KATHERINE ALEJANDRA', 499, NULL),
+('2018434680-1', '1', '1105', '1101', '1110', 'ROMANI CASTILLO JORGE ANDR�S', 701, NULL),
+('2018435902-3', '1', '1109', '1104', '1110', 'P�REZ MORENO �LVARO FELIPE', 742, NULL),
+('2018436518-0', 'M', '1102', '1104', '1101', ' LAZO VALD�S CARLOS GABRIEL', 458, NULL),
+('2018438324-2', '1', '1109', '1109', '1108', 'VILLACURA SOTO MAR�A JOS�', 762, '1109'),
+('2018438812-1', 'M', '1107', '1105', '1110', ' HENR�QUEZ CARTER IVETTE NATALIA', 599, NULL),
+('2018440779-6', 'M', '1108', '1110', '1109', ' LUNA MORENO CONSTANZA PAZ', 524, NULL),
+('2018441431-8', '1', '1101', '1110', '1102', 'CORT�S P�REZ MAR�A JOS�', 684, NULL),
+('2018442577-8', 'M', '1108', '1101', '1102', ' DAZA ECHEVERR�A VICENTE PABLO IGNACIO', 718, NULL),
+('2018444171-4', 'M', '1101', '1109', '1103', ' SILVA GUTI�RREZ JUAN PABLO', 764, '1109'),
+('2018444821-2', '1', '1104', '1105', '1104', 'VILLAGR�N INZUNZA MAR�A FERNANDA', 651, NULL),
+('2018445525-1', '1', '1101', '1103', '1107', 'BUSTOS GUTI�RREZ JAIME AARON', 538, NULL),
+('2018446866-3', 'M', '1106', '1105', '1104', ' Z��IGA CAVIERES DANIEL ANDR�S', 579, NULL),
+('2018451916-1', 'M', '1109', '1110', '1101', ' SILVA CALABRANO CAMILA ANDREA', 612, NULL),
+('2018453633-2', '1', '1103', '1103', '1103', 'MU�OZ BURGOS SEBASTI�N IGNACIO', 577, NULL),
+('2018455962-6', '1', '1102', '1109', '1110', 'SEP�LVEDA ALMUNA CONSUELO IGNACIA', 540, NULL),
+('2018456748-3', 'M', '1108', '1104', '1106', ' SCHLEEF SEP�LVEDA BENJAM�N RODRIGO', 809, '1108'),
+('2018457205-3', 'M', '1109', '1104', '1102', ' V�SQUEZ D�AZ JEREM�AS VALENT�N EZEQUIE', 847, '1109'),
+('2018458163-0', 'M', '1102', '1110', '1104', ' PINTO LARA ISIDORA JAZM�N JAVIERA', 762, '1110'),
+('2018458864-2', '1', '1102', '1104', '1106', 'CATRIL P�REZ MAT�AS IGNACIO', 517, NULL),
+('2018460001-4', '1', '1105', '1106', '1105', 'GALGANO CABRERA GIORGIO STEFANO IAN MICHE', 778, '1105'),
+('2018900371-5', '1', '1109', '1107', '1109', 'ZAPATA SANTANA JOAQU�N ENRIQUE', 527, NULL),
+('2018900486-0', '1', '1107', '1102', '1104', 'ENCINA ROCO SOF�A TAMAHI', 606, NULL),
+('2018900851-2', '1', '1105', '1107', '1107', 'CHANG LIU MINGTSU LEONARDO', 646, NULL),
+('2019042114-8', '1', '1109', '1101', '1105', 'M�NDEZ BRAVO IGNACIO ESTEBAN', 482, NULL),
+('2019409221-1', '1', '1105', '1101', '1104', 'ZAPPETTINI LEIVA PAOLO ANTONIO', 518, NULL),
+('2019409298-0', '1', '1103', '1104', '1101', 'QUI�INAO L�PEZ MAURO JAVIER', 459, NULL),
+('2019409743-4', '1', '1107', '1107', '1108', 'SEGUEL HIGUERA TOM�S IGNACIO', 692, NULL),
+('2019410792-8', '1', '1103', '1110', '1108', 'MONTOYA ORTIGOSA SEBASTI�N ANDR�S', 626, NULL),
+('2019411977-2', '1', '1101', '1105', '1102', 'S�NCHEZ MENDOZA SEBASTI�N ALEXANDER', 673, NULL),
+('2019413465-8', '2', '1106', '1110', '1108', 'DUR�N S�NCHEZ JEAN PAULO', 799, '1106'),
+('2019413759-2', '1', '1101', '1104', '1106', 'LAMA COFR� DANIELA CONSTANZA', 786, '1101'),
+('2019415034-3', '1', '1105', '1104', '1106', 'RIQUELME MORA �TALO BENJAM�N', 472, NULL),
+('2019416383-6', '2', '1106', '1108', '1107', 'FUENTES SE�ISMAN JAVIERA FRANCISCA DE JES�S', 688, NULL),
+('2019419838-9', '1', '1101', '1110', '1108', 'RAMOS CANDIA CARLA EMILIA', 635, NULL),
+('2019420364-1', '1', '1105', '1108', '1101', 'FERRADA VEL�SQUEZ SASHA ALEXANDRA', 478, NULL),
+('2019421221-7', '2', '1101', '1110', '1102', 'GUZM�N VALENZUELA LUIS SEBASTI�N', 632, NULL),
+('2019423169-6', '1', '1109', '1109', '1102', 'ASTETE QUEZADA AGUST�N FRANCISCO', 632, NULL),
+('2019424572-7', '2', '1108', '1105', '1109', 'ARROYO BRIONES SASHA THAYS', 727, NULL),
+('2019426176-5', '1', '1102', '1104', '1105', 'JARA SEP�LVEDA RONALD ANDR�S HUGO', 534, NULL),
+('2019426907-3', '2', '1108', '1105', '1102', 'MELITA CRUCES LUIS ANDR�S', 788, '1108'),
+('2019427032-2', '1', '1102', '1106', '1101', 'GUARDIA TALLARD CONSUELO', 549, NULL),
+('2019428136-7', '1', '1104', '1103', '1109', 'MORALES VERA CONSUELO ALEJANDRINA', 757, '1103'),
+('2019428501-0', '1', '1106', '1104', '1102', 'ACU�A MONCADA ANA�S RAYEN', 606, NULL),
+('2019428942-2', '2', '1106', '1105', '1102', 'G�MEZ TORRES CATALINA ALEJANDRA', 568, NULL),
+('2019431498-2', '2', '1110', '1107', '1107', 'CIFUENTES AGUILERA MAR�A PAZ', 604, NULL),
+('2019432524-1', '2', '1102', '1103', '1109', 'MEDINA RIVAS ABIGAIL SCARLETH', 564, NULL),
+('2019432567-4', '2', '1102', '1103', '1109', 'PARADA MELIM�N SEBASTI�N ALEJANDRO', 541, NULL),
+('2019432826-6', '2', '1103', '1107', '1109', 'QUINTANA BRICE�O CHRISTIAN ESTEBAN', 696, NULL),
+('2019433369-3', '2', '1107', '1105', '1105', 'FERREIRA FEDELE JOAQU�N IGNACIO', 775, '1105'),
+('2019433644-7', '2', '1102', '1104', '1102', 'CHUNG CALCAGNO GABRIEL ALEJANDRO', 605, NULL),
+('2019433954-3', '2', '1109', '1103', '1108', 'HERRERA CUEVAS JAVIER IGNACIO', 767, '1109'),
+('2019434314-1', '2', '1107', '1107', '1101', 'HERN�NDEZ FUENTES MAT�AS ANTONIO', 761, NULL),
+('2019434390-7', '2', '1108', '1105', '1103', 'CARPO WILLIAMS JORGE IGNACIO', 741, '1105'),
+('2019434632-9', '2', '1107', '1109', '1102', 'CARRILLO RIVERA JAVIERA IGNACIA', 491, NULL),
+('2019434675-2', '2', '1110', '1104', '1103', 'PRADENAS VEGA SEBASTI�N ANTONIO', 691, NULL),
+('2019436031-3', '1', '1110', '1105', '1109', 'QUIROGA BURBOA AMANDA AILIN', 488, NULL),
+('2019436554-4', '1', '1108', '1102', '1107', 'SALAS HIDALGO MAT�AS IGNACIO', 681, NULL),
+('2019437224-9', '2', '1104', '1106', '1103', 'BURGOS SOBARZO GABRIEL ELISEO', 706, NULL),
+('2019437950-2', '1', '1106', '1110', '1105', 'ZURITA MAR�N CATALINA ALEJANDRA', 545, NULL),
+('2019438549-9', '2', '1108', '1109', '1106', 'HUME RODR�GUEZ MIL�N CRIST�BAL', 531, NULL),
+('2019438883-8', '2', '1103', '1109', '1108', 'VALD�S LEIVA SCARLETH ELIZABET TABBATA KHRYS', 766, '1103'),
+('2019439596-6', '2', '1106', '1106', '1101', 'HERN�NDEZ CALQU�N MAT�AS EDUARDO', 651, NULL),
+('2019440683-6', '2', '1102', '1109', '1101', 'RIFFO PINTO RAYNIER IGNACIO', 790, '1109'),
+('2019442775-2', '1', '1105', '1104', '1102', 'PASTENE SANDOVAL AILIN NICOLE', 498, NULL),
+('2019442805-8', '2', '1104', '1101', '1101', 'VILLEGAS URRA JAVIER ALEJANDRO', 703, NULL),
+('2019443089-3', '2', '1110', '1101', '1109', 'CHICAHUAL REYES NICOL�S IGNACIO', 500, NULL),
+('2019443542-9', '2', '1110', '1105', '1105', 'VALENCIA AGUAYO ELSON MAURICIO', 470, NULL),
+('2019443984-0', '2', '1106', '1102', '1110', 'P�REZ GONZ�LEZ RODR�GO ANDR�S', 721, NULL),
+('2019444085-6', '2', '1106', '1108', '1105', 'S�NCHEZ S�NCHEZ NICOL�S IGNACIO', 820, '1106'),
+('2019445243-9', '2', '1103', '1103', '1105', 'ESTEBAN BARRIENTOS FELIPE ANTONIO', 470, NULL),
+('2019445405-9', '2', '1109', '1107', '1109', 'OSSES MERA AGUST�N NICOL�S', 562, NULL),
+('2019446185-3', '2', '1105', '1105', '1108', 'VILLA VALDEBENITO DANIELA ANDREA', 452, NULL),
+('2019446479-8', '1', '1103', '1105', '1108', 'GONZ�LEZ ARRIAGADA CLAUDIA FERNANDA', 788, '1103'),
+('2019446983-8', '2', '1103', '1106', '1106', 'MONTOYA OSSES JOS� IGNACIO', 795, '1103'),
+('2019447777-6', '2', '1107', '1108', '1104', 'VARGAS C�RDENAS CYNTHIA VANESA', 698, NULL),
+('2019448331-8', '1', '1109', '1109', '1104', 'AROCA PEZOA CAROLINA IGNACIA', 491, NULL),
+('2019448994-4', '2', '1106', '1104', '1102', 'CONSTANZO GONZ�LEZ AGUST�N IGNACIO', 775, NULL),
+('2019449320-8', '2', '1109', '1105', '1101', 'GARC�A ZAVALA ALEJANDRO HERN�N', 458, NULL),
+('2019449630-4', '1', '1104', '1104', '1104', 'MORALES V�SQUEZ KATHERIN NAYELE', 605, NULL),
+('2019450701-2', '2', '1107', '1105', '1104', 'VILLALOBOS ALFARO KEVIN ALEJANDRO ANDR�S', 816, '1107'),
+('2019452193-7', '2', '1106', '1103', '1110', 'CARRASCO MEZA PABLO ANDR�S', 795, '1103'),
+('2019453041-3', '2', '1105', '1103', '1110', 'VALD�S ACEVEDO CRIST�BAL ADOLFO', 580, NULL),
+('2019453050-2', '2', '1105', '1107', '1102', 'CHAPARRO ALARC�N OMAR SEBASTI�N', 561, NULL),
+('2019453785-0', '2', '1103', '1109', '1102', 'DELGADO ESCOBAR CRIST�BAL ALONSO', 477, NULL),
+('2019454072-9', '2', '1103', '1105', '1102', 'URRUTIA ALVARADO TOM�S IGNACIO', 773, '1103'),
+('2019454234-9', '1', '1101', '1101', '1105', 'GONZ�LEZ PRADENAS ISIDORA JOSEFA', 840, '1101'),
+('2019455095-3', '2', '1102', '1107', '1101', 'ALBARR�N ACU�A MANUEL IGNACIO', 631, NULL),
+('2019455826-1', '2', '1108', '1106', '1104', 'SOBARZO RIQUELME FRANCISCA JAVIERA', 835, '1108'),
+('2019457012-1', '1', '1107', '1110', '1109', 'GARC�A PARRA CATALINA FLORENCIA', 802, '1110'),
+('2019457314-7', '2', '1108', '1106', '1108', 'CUEVAS CARRASCO FERNANDO SEBASTI�N', 540, NULL),
+('2019900455-8', '2', '1108', '1105', '1106', 'MORENO BIZAMA CRIST�BAL IGNACIO', 828, '1108'),
+('2019900765-4', '2', '1103', '1103', '1102', 'CORTEZ ISRAEL FELIPE ALONSO', 674, NULL),
+('2020018081-1', '2', '1108', '1105', '1101', 'LOZANO RODR�GUEZ SEBASTI�N IGNACIO', 702, NULL),
+('2020400652-1', '2', '1107', '1106', '1107', 'BASTIAS THIEME RODRIGO ALONSO', 488, NULL),
+('2020403678-1', '2', '1104', '1102', '1108', 'AZOCAR GASPARINI SEBASTIAN BENJAMIN', 464, NULL),
+('2020404224-2', '1', '1105', '1102', '1103', 'D�AZ VEL�SQUEZ IGNACIO HUMBERTO', 770, '1105'),
+('2020436690-1', '2', '1109', '1110', '1104', 'ESTERIO FERN�NDEZ VICENTE AMADOR', 667, NULL),
+('2021018174-2', '1', '1102', '1110', '1105', 'VALDEBENITO VASQUEZ DIEGO EDUARDO', 692, NULL),
+('Matricuka', 'S', 'pref', 'pref', 'pref', 'Nombre', 0, NULL);
+
+--
+-- �ndices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `asignaturas`
+--
+ALTER TABLE `asignaturas`
+  ADD PRIMARY KEY (`codAsignatura`);
+
+--
+-- Indices de la tabla `carreras`
+--
+ALTER TABLE `carreras`
+  ADD PRIMARY KEY (`codCarrera`);
+
+--
+-- Indices de la tabla `malla`
+--
+ALTER TABLE `malla`
+  ADD PRIMARY KEY (`codCarrera`,`codAsignatura`),
+  ADD KEY `codAsignatura` (`codAsignatura`);
+
+--
+-- Indices de la tabla `postulantes`
+--
+ALTER TABLE `postulantes`
+  ADD PRIMARY KEY (`numMat`),
+  ADD KEY `carrera` (`codCarrera`) USING BTREE;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `malla`
+--
+ALTER TABLE `malla`
+  ADD CONSTRAINT `malla_ibfk_1` FOREIGN KEY (`codAsignatura`) REFERENCES `asignaturas` (`codAsignatura`),
+  ADD CONSTRAINT `malla_ibfk_2` FOREIGN KEY (`codCarrera`) REFERENCES `carreras` (`codCarrera`);
+
+--
+-- Filtros para la tabla `postulantes`
+--
+ALTER TABLE `postulantes`
+  ADD CONSTRAINT `postulantes_ibfk_1` FOREIGN KEY (`codCarrera`) REFERENCES `carreras` (`codCarrera`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- 4
+UPDATE postulantes
+  Set postulantes.codCarrera = Null; 
+
+UPDATE postulantes,carreras 
+  Set postulantes.codCarrera = carreras.codCarrera WHERE
+    (carreras.codCarrera = postulantes.pref1 AND ptjePTU <= ptu );
+
+UPDATE postulantes,carreras 
+  Set postulantes.codCarrera = carreras.codCarrera WHERE
+    (carreras.codCarrera = postulantes.pref2 AND ptjePTU <= ptu AND postulantes.codCarrera is Null );
+
+UPDATE postulantes,carreras 
+  Set postulantes.codCarrera = carreras.codCarrera WHERE
+    (carreras.codCarrera = postulantes.pref3 AND ptjePTU <= ptu AND postulantes.codCarrera is Null );

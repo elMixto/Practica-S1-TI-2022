@@ -1,0 +1,26 @@
+{% extends "template.jinja" %}
+
+{% block body %}
+<h1>{{ title }}</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      {% for col in context["columnas"] %}
+        <th scope="col">{{ col }}</th>
+      {% endfor %}
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for fila in context["filas"] %}
+        <tr>
+        <th scope="row">{{ loop.index }}</th>
+        {% for val in fila %}
+            <td>{{ val }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock body %}

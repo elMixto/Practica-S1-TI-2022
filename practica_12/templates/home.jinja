@@ -1,0 +1,25 @@
+{% extends "template.jinja" %}
+{% block body %}
+<div class="container-sm text-center">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Numero matricula</th>
+            <th scope="col">Nombre</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tupla in nombres %}
+              <tr>
+                  {# <th scope="row"></th> #}
+                  
+                  <td>{{ tupla[0] }}</td>
+                  <td>{{ tupla[1] }}</td>
+              </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+
+{% endblock body %}

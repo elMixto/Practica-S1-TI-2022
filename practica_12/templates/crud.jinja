@@ -1,0 +1,80 @@
+{% extends "template.jinja" %} {% block body %}
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Crud postulantes</span>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row text-center">
+    <form method="post">
+      <input type="hidden" name="tipo_form" value="R" />
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Buscar Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          aria-describedby="descripcionBusqueda"
+          placeholder="Juanito"
+          name="nombre"
+        />
+        <div id="descripcionBusqueda" class="form-text">
+          Busca el nombre de un postulante en la base de datos.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="row container-sm mt-3 text-center">
+    <div class="col">
+      <form method="post">
+        <input type="hidden" name="tipo_form" value="D" />
+        <div class="mb-3">
+          <label for="nmatricula" class="form-label">Numero de matricula</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nmatricula"
+            aria-describedby="descripcionDelete"
+            placeholder="2018451991"
+            name="numMat"
+          />
+          <div id="descripcionDelete" class="form-text">
+            Eliminar el postulante con el condigo de matricula especificado
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="col">
+      <form method="post">
+        <input type="hidden" name="tipo_form" value="D" />
+        <div class="mb-3">
+          <label for="nmatricula" class="form-label">Numero de matricula</label>
+          <input type="text" class="form-control" id="nmatricula" aria-describedby="descripcionDelete" placeholder="2018451991" name="numMat"/>
+          <div id="descripcionDelete" class="form-text">
+            Eliminar el postulante con el condigo de matricula especificado
+          </div>
+        </div>
+        <div class="mb-3">
+            <label for="seccion" class="form-label">Seccion</label>
+            <input type="number" min="1" max="{{ context["n_secciones"] }}" class="form-control" id="seccion" aria-describedby="descripcionSeccion" placeholder="1" name="seccion"/>
+            <div id="descripcionSeccion" class="form-text">
+              Seccion del postulante
+            </div>
+        </div>
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="codCarrera" >
+            <option selected>Selecciona una carrera disponible</option>
+            {% for tupla in context["carreras_disponibles"] %}
+                <option value="{{ tupla[0] }}">{{ tupla[1] }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock body %}
